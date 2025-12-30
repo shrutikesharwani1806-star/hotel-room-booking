@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMENITIES || About</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .facility-card {
+            background: white;
+            border-radius: 1.5vw;
+            padding: 3vh 1vw;
+            text-align: center;
+            transition: all 0.4s ease;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .facility-card img {
+            width: 4vw;
+            margin: 0 auto 2vh;
+        }
+
+        .facility-card p {
+            font-size: 1vw;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-1.5vh);
+            box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(4vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .facility-card img {
+                width: 8vw;
+            }
+
+            .facility-card p {
+                font-size: 3vw;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body class="bg-white overflow-x-hidden">
+
+    <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
+        bg-black/60 backdrop-blur-xl rounded-full
+        px-[4vw] py-[1.2vh]
+        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+
+        <a href="./index.html"
+            class="hover:bg-white hover:text-black text-white px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
+        <a href="./about.html" class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">About</a>
+        <a href="rooms.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Rooms</a>
+        <a href="./amenities.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Amenities</a>
+        <a href="./contact.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Contact</a>
+
+    </nav>
+
+    <!-- HERO ABOUT SECTION -->
+    <section class="w-[100vw] h-[100vh] flex items-center justify-center
+           bg-cover bg-center relative" style="background-image:url('./images/about\ bg.jpg')">
+
+        <!-- DARK OVERLAY -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- CONTENT -->
+        <div class="relative text-center text-white animate-fadeUp">
+
+            <p class="tracking-[0.5vw] text-[3vw] md:text-[1vw] cursor-pointer opacity-80 mb-[2vh]">
+                WELCOME TO AMENITIES
+            </p>
+
+            <h1 class="text-[10vw] md:text-[5vw] font-light mb-[2vh]">
+                ABOUT US
+            </h1>
+
+            <div class="w-[20vw] h-[0.2vh] bg-[#c7a76a] mx-auto"></div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT CONTENT SECTION -->
+    <section class="w-[100vw] min-h-[100vh] px-[8vw] py-[12vh]">
+
+        <div class="grid md:grid-cols-2 gap-[6vw] items-center">
+
+            <!-- IMAGE -->
+            <img src="./images/about room.jpg" class="cursor-pointer w-[100%] h-[60vh] object-cover rounded-[2vw]
+               animate-slideLeft">
+
+            <!-- TEXT -->
+            <div class="animate-slideRight">
+
+                <p class="text-[3vw] md:text-[1vw] tracking-widest text-gray-500 mb-[2vh]">
+                    LUXURY HOTEL EXPERIENCE
+                </p>
+
+                <h2 class="text-[7vw] md:text-[3vw] mb-[4vh]">
+                    Luxury Best Hotel in City <br> California, USA
+                </h2>
+
+                <p class="text-[3.5vw] md:text-[1vw] opacity-70 leading-relaxed">
+                    We provide world-class hospitality with modern luxury.
+                    Our rooms are designed to give comfort, elegance, and
+                    unforgettable experiences for every guest.
+                </p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- HOTEL FACILITIES -->
+    <section class="w-[100vw] min-h-[70vh] bg-[#f7f5f0]
+                px-[6vw] py-[10vh] flex flex-col items-center">
+
+        <!-- HEADING -->
+        <div class="text-center mb-[8vh] animate-fadeUp">
+            <i class="fa-solid fa-hotel w-[10vw] mx-auto mb-[2vh]"></i>
+
+            <h2 class="text-[7vw] md:text-[3vw] mb-[2vh]">
+                Hotel’s Facilities
+            </h2>
+
+            <p class="text-[3.5vw] md:text-[1vw] opacity-70 max-w-[60vw] mx-auto">
+                Proactively morph optimal solutions for highly efficient
+                hospitality experiences.
+            </p>
+        </div>
+
+        <!-- FACILITIES GRID -->
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-[3vw] w-[100%]">
+
+            <!-- CARD -->
+            <div class="hover:cursor-pointer facility-card">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <p>Room Service</p>
+            </div>
+
+            <div class="hover:cursor-pointer facility-card">
+                <i class="fa-solid fa-wifi"></i>
+                <p>Wi-Fi Internet</p>
+            </div>
+
+            <div class="hover:cursor-pointer facility-card">
+                <i class="fa-solid fa-key"></i>
+                <p>Smart Key</p>
+            </div>
+
+            <div class="hover:cursor-pointer facility-card">
+                <i class="fa-solid fa-bowl-food"></i>
+                <p>Breakfast</p>
+            </div>
+
+            <div class="hover:cursor-pointer facility-card">
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Swimming Pool</p>
+            </div>
+
+            <div class="hover:cursor-pointer facility-card">
+                <i class="fa-solid fa-dumbbell"></i>
+                <p>Gym & Fitness</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="w-[100vw] px-[6vw] py-[8vh]">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-[6vw] text-[3vw] md:text-[1vw]">
+
+            <!-- ABOUT -->
+            <div>
+                <h3 class="mb-[2vh] cursor-pointer font-semibold">About</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer transition">About us</li>
+                    <li class="hover:opacity-100 cursor-pointer transition">Our rooms</li>
+                    <li class="hover:opacity-100 cursor-pointer transition">Contact us</li>
+                </ul>
+            </div>
+
+            <!-- RESERVATION -->
+            <div>
+                <h3 class="mb-[2vh] cursor-pointer font-semibold">Reservation</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer transition">Request invoice</li>
+                    <li class="hover:opacity-100 cursor-pointer transition">Find a reservation</li>
+                    <li class="hover:opacity-100 cursor-pointer transition">Accommodation</li>
+                    <li class="hover:opacity-100 cursor-pointer transition">Destination guide</li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div>
+                <h3 class="mb-[2vh] cursor-pointer font-semibold">Opening hours</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:cursor-pointer">Mon – Fri: 12AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Saturday: 9AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Sunday: 10AM – 10PM</li>
+                </ul>
+            </div>
+
+            <!-- ADDRESS -->
+            <div>
+                <h3 class="mb-[2vh] cursor-pointer font-semibold">Address</h3>
+                <p class="opacity-70 cursor-pointer leading-relaxed">
+                    Line 7, 01/13 Mercury St,<br>
+                    Point Nova, South Wake,<br>
+                    Australia 3041
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mt-[6vh] text-center text-[2.5vw] cursor-pointer md:text-[0.9vw] opacity-60">
+            © 2025 Motelin Hotel. All rights reserved.
+        </div>
+
+    </footer>
+
+    <!-- ANIMATIONS -->
+    <style>
+        .animate-fadeUp {
+            animation: fadeUp 1.2s ease forwards;
+        }
+
+        .animate-slideLeft {
+            animation: slideLeft 1.2s ease forwards;
+        }
+
+        .animate-slideRight {
+            animation: slideRight 1.2s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(5vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-5vw);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(5vw);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+
+</body>
+
+</html>

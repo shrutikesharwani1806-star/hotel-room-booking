@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMENITIES || Rooms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f4f1ec] overflow-x-hidden">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="w-[100vw] h-[80vh] relative flex items-center px-[8vw]"
+        style="background:url('./images/roombg.jpg') center/cover no-repeat;">
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- ================= NAVBAR ================= -->
+        <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
+        bg-black/60 backdrop-blur-xl rounded-full
+        px-[4vw] py-[1.2vh]
+        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+
+            <a href="./index.html" class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
+            <a href="./about.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">About</a>
+            <a href="rooms.html"
+                class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">Rooms</a>
+            <a href="./amenities.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Amenities</a>
+            <a href="./contact.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Contact</a>
+
+        </nav>
+
+        <div class="relative text-white max-w-[60vw]">
+            <h1 class="text-[8vw] md:text-[4vw] mb-[2vh]">OUR ROOMS</h1>
+            <p class="text-[3.5vw] md:text-[1.2vw] opacity-80 mb-[3vh]">
+                Immerse yourself in the breathtaking beauty of our coastal paradise,
+                where the rhythmic sounds of the ocean waves provide a soothing backdrop.
+            </p>
+
+            <button onclick="document.getElementById('luxury').scrollIntoView({behavior:'smooth'})" class="border border-white px-[4vw] py-[1.2vh] rounded-full
+      text-[3vw] md:text-[1vw] hover:bg-white hover:text-black transition">
+                BOOK NOW
+            </button>
+        </div>
+
+    </section>
+
+    <!-- ================= LUXURIOUS COMFORT ================= -->
+    <section id="luxury" class="w-[100vw] px-[8vw] py-[10vh] bg-[#f4f1ec]">
+
+        <h2 class="text-center text-[7vw] md:text-[3.5vw] mb-[8vh]">
+            LUXURIOUS COMFORT
+        </h2>
+
+        <!-- ROOM CARD -->
+        <div class="flex flex-col my-[2vh] md:flex-row gap-[4vw] items-center
+              bg-white rounded-[2vw] p-[3vw] shadow">
+
+            <img src="./images/room6.avif" class="w-[100%] md:w-[30vw] h-[30vh] object-cover rounded-[1.5vw]">
+
+            <div class="flex-1">
+                <h3 class="text-[4vw] md:text-[1.8vw] mb-[1vh]">Standard</h3>
+                <p class="text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    Upscale full-service hotel facility offers luxury amenities and premium comfort.
+                </p>
+
+                <div class="flex gap-[3vw] text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    <span>👤 1–2 Persons</span>
+                    <span>🛏 Single Bed</span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-[3vw] md:text-[1vw] opacity-60 mb-[1vh]">FROM</p>
+                <p class="text-[4vw] md:text-[1.8vw] mb-[2vh]">$240</p>
+
+                <button onclick="bookRoom('Premium Suite', 240, './images/room6.avif')" class="mt-[2vh] px-[3vw] py-[1vh] border rounded-full
+                          text-[3vw] md:text-[1vw] cursor-pointer
+                          hover:bg-black hover:text-white transition">
+                    Book now
+                </button>
+            </div>
+
+        </div>
+
+        <div class="flex flex-col my-[2vh] md:flex-row gap-[4vw] items-center
+              bg-white rounded-[2vw] p-[3vw] shadow">
+
+            <img src="./images/room5.jpg" class="w-[100%] md:w-[30vw] h-[30vh] object-cover rounded-[1.5vw]">
+
+            <div class="flex-1">
+                <h3 class="text-[4vw] md:text-[1.8vw] mb-[1vh]">Standard</h3>
+                <p class="text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    Luxury room with city view, premium bedding and enhanced space.
+                </p>
+
+                <div class="flex gap-[3vw] text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    <span>👤 1–2 Persons</span>
+                    <span>🛏 Single Bed</span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-[3vw] md:text-[1vw] opacity-60 mb-[1vh]">FROM</p>
+                <p class="text-[4vw] md:text-[1.8vw] mb-[2vh]">$340</p>
+
+                <button onclick="bookRoom('Beach room', 340, './images/room5.jpg')" class="mt-[2vh] px-[3vw] py-[1vh] border rounded-full
+                          text-[3vw] md:text-[1vw] cursor-pointer
+                          hover:bg-black hover:text-white transition">
+                    Book now
+                </button>
+            </div>
+
+        </div>
+
+        <div class="flex flex-col my-[2vh] md:flex-row gap-[4vw] items-center
+              bg-white rounded-[2vw] p-[3vw] shadow">
+
+            <img src="./images/room7.jpg" class="w-[100%] md:w-[30vw] h-[30vh] object-cover rounded-[1.5vw]">
+
+            <div class="flex-1">
+                <h3 class="text-[4vw] md:text-[1.8vw] mb-[1vh]">Standard</h3>
+                <p class="text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                   Most hotels and major hospitality companies have set industry standards to classify hotel types.
+                </p>
+
+                <div class="flex gap-[3vw] text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    <span>👤 1–2 Persons</span>
+                    <span>🛏 Single Bed</span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-[3vw] md:text-[1vw] opacity-60 mb-[1vh]">FROM</p>
+                <p class="text-[4vw] md:text-[1.8vw] mb-[2vh]">$650</p>
+
+                <button onclick="bookRoom('High Class Room', 650, './images/room7.jpg')" class="mt-[2vh] px-[3vw] py-[1vh] border rounded-full
+                          text-[3vw] md:text-[1vw] cursor-pointer
+                          hover:bg-black hover:text-white transition">
+                    Book now
+                </button>
+            </div>
+
+        </div>
+        <div class="flex flex-col my-[2vh] md:flex-row gap-[4vw] items-center
+              bg-white rounded-[2vw] p-[3vw] shadow">
+
+            <img src="./images/room8.avif" class="w-[100%] md:w-[30vw] h-[30vh] object-cover rounded-[1.5vw]">
+
+            <div class="flex-1">
+                <h3 class="text-[4vw] md:text-[1.8vw] mb-[1vh]">Standard</h3>
+                <p class="text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    Most hotels and major hospitality companies have set industry standards to classify hotel types.
+                </p>
+
+                <div class="flex gap-[3vw] text-[3vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                    <span>👤 1–2 Persons</span>
+                    <span>🛏 Single Bed</span>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-[3vw] md:text-[1vw] opacity-60 mb-[1vh]">FROM</p>
+                <p class="text-[4vw] md:text-[1.8vw] mb-[2vh]">$250</p>
+
+                <button onclick="bookRoom('Sand Room', 250, './images/room8.avif')" class="mt-[2vh] px-[3vw] py-[1vh] border rounded-full
+                          text-[3vw] md:text-[1vw] cursor-pointer
+                          hover:bg-black hover:text-white transition">
+                    Book now
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- FOOTER -->
+    <footer class="w-[100vw] px-[6vw] py-[8vh]">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-[6vw] text-[3vw] md:text-[1vw]">
+
+            <!-- ABOUT -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">About</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">About us</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Our rooms</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Contact us</li>
+                </ul>
+            </div>
+
+            <!-- RESERVATION -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Reservation</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Request invoice</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Find a reservation</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Accommodation</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Destination guide</li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Opening hours</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:cursor-pointer">Mon – Fri: 12AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Saturday: 9AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Sunday: 10AM – 10PM</li>
+                </ul>
+            </div>
+
+            <!-- ADDRESS -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Address</h3>
+                <p class="opacity-70 cursor-pointer leading-relaxed">
+                    Line 7, 01/13 Mercury St,<br>
+                    Point Nova, South Wake,<br>
+                    Australia 3041
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mt-[6vh] cursor-pointer text-center text-[2.5vw] md:text-[0.9vw] opacity-60">
+            © 2025 Motelin Hotel. All rights reserved.
+        </div>
+
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

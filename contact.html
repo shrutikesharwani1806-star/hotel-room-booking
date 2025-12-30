@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMENITIES || Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="overflow-x-hidden bg-black">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
+        bg-black/60 backdrop-blur-xl rounded-full
+        px-[4vw] py-[1.2vh]
+        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+
+        <a href="./index.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
+        <a href="./about.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">About</a>
+        <a href="rooms.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Rooms</a>
+        <a href="./amenities.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Amenities</a>
+        <a href="./contact.html" class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">Contact</a>
+
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="w-[100vw] h-[100vh] relative flex items-center justify-center overflow-hidden">
+
+        <!-- BACKGROUND IMAGE -->
+        <div class="absolute inset-0 scale-110 animate-bgZoom"
+            style="background:url('./images/contact\ us.jpg') center/cover no-repeat;">
+        </div>
+
+        <!-- DARK OVERLAY -->
+        <div class="absolute inset-0 bg-black/55"></div>
+
+        <!-- CONTENT -->
+        <div id="heroContent" class="relative text-center text-white px-[6vw]
+        opacity-0 scale-90 translate-y-[6vh]
+        transition-all duration-[1500ms] ease-out">
+
+            <h1 class="text-[9vw] md:text-[4vw] font-serif mb-[2vh]">
+                Contact Us
+            </h1>
+
+            <p class="text-[3.5vw] md:text-[1vw]
+            tracking-[0.3vw] opacity-80 mb-[4vh]">
+                — WE WILL HELP YOU TO SOLVE ANY PROBLEM —
+            </p>
+
+            <p class="text-[3vw] md:text-[1vw] opacity-60">
+                HOME &nbsp; • &nbsp; CONTACT US
+            </p>
+
+        </div>
+    </section>
+    <!-- ================= MAP + INFO SECTION ================= -->
+    <section class="w-[100vw] min-h-[120vh] relative bg-white overflow-hidden">
+
+        <!-- MAP BACKGROUND -->
+        <div class="w-[100vw] h-[65vh] md:h-[75vh] grayscale brightness-[1.1]
+        scale-110 animate-mapZoom" style="background:url('./images/map.gif') center/cover no-repeat;">
+        </div>
+
+        <!-- WHITE INFO PANEL -->
+        <div id="contactInfo" class="w-[100vw] min-h-[55vh]
+        flex flex-col items-center justify-center
+        text-center px-[8vw]
+        opacity-0 translate-y-[6vh]
+        transition-all duration-[1200ms] ease-out">
+
+            <h2 class="text-[6vw] md:text-[2.5vw] font-serif mb-[3vh]">
+                Need help with your online booking,
+            </h2>
+
+            <p class="text-[3.5vw] md:text-[1.2vw] mb-[2vh] max-w-[80vw] md:max-w-[55vw]">
+                have a question or need more information? Just drop us a line!
+            </p>
+
+            <p class="text-[3vw] md:text-[1vw] opacity-60 max-w-[75vw] md:max-w-[50vw] leading-[4.5vh]">
+                Phasellus habitant morbi tristique senectus et netus et malesuada
+                fames ac turpis egestas. Fusce sodales, sapien ut venenatis
+                scelerisque.
+            </p>
+
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="w-[100vw] bg-white px-[6vw] py-[8vh]">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-[6vw] text-[3vw] md:text-[1vw]">
+
+            <!-- ABOUT -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">About</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">About us</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Our rooms</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Contact us</li>
+                </ul>
+            </div>
+
+            <!-- RESERVATION -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Reservation</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Request invoice</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Find a reservation</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Accommodation</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Destination guide</li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Opening hours</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:cursor-pointer">Mon – Fri: 12AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Saturday: 9AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Sunday: 10AM – 10PM</li>
+                </ul>
+            </div>
+
+            <!-- ADDRESS -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Address</h3>
+                <p class="opacity-70 cursor-pointer leading-relaxed">
+                    Line 7, 01/13 Mercury St,<br>
+                    Point Nova, South Wake,<br>
+                    Australia 3041
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mt-[6vh] cursor-pointer text-center text-[2.5vw] md:text-[0.9vw] opacity-60">
+            © 2025 Motelin Hotel. All rights reserved.
+        </div>
+
+    </footer>
+
+    <!-- ================= ANIMATION SCRIPT ================= -->
+    <script>
+        window.addEventListener("load", () => {
+            document.getElementById("heroContent").classList.remove("opacity-0", "scale-90", "translate-y-[6vh]");
+        });
+    </script>
+
+    <!-- ================= CUSTOM KEYFRAMES ================= -->
+    <style>
+        @keyframes bgZoom {
+            0% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-bgZoom {
+            animation: bgZoom 3s ease-out forwards;
+        }
+    </style>
+    <script>
+        const infoSection = document.getElementById("contactInfo");
+
+        window.addEventListener("scroll", () => {
+            const sectionTop = infoSection.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight * 0.8;
+
+            if (sectionTop < triggerPoint) {
+                infoSection.classList.remove("opacity-0", "translate-y-[6vh]");
+            }
+        });
+    </script>
+
+</body>
+
+</body>
+
+</html>

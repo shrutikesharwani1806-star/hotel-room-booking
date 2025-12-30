@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities | Seaside Hotel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .room-card {
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5vw;
+            overflow: hidden;
+            color: white;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-2vh);
+            box-shadow: 0 3vh 6vh rgba(0, 0, 0, 0.4);
+        }
+
+        .badge {
+            position: absolute;
+            top: 2vh;
+            left: 2vw;
+            background: #b08a4f;
+            padding: 0.6vh 1.2vw;
+            font-size: 0.8vw;
+            color: white;
+            z-index: 10;
+        }
+
+        .card-body {
+            padding: 3vh 2vw;
+        }
+
+        .icons {
+            font-size: 0.9vw;
+            opacity: 0.8;
+            margin-bottom: 1.5vh;
+        }
+
+        .card-body h3 {
+            font-size: 1.3vw;
+            margin-bottom: 1vh;
+        }
+
+        .desc {
+            font-size: 0.9vw;
+            opacity: 0.75;
+            margin-bottom: 3vh;
+        }
+
+        .book-btn {
+            border: 1px solid #b08a4f;
+            padding: 1vh 2vw;
+            font-size: 0.9vw;
+            transition: 0.3s;
+        }
+
+        .book-btn:hover {
+            background: #b08a4f;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .badge {
+                font-size: 2.5vw;
+            }
+
+            .icons,
+            .desc,
+            .book-btn {
+                font-size: 3vw;
+            }
+
+            .card-body h3 {
+                font-size: 4vw;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <section class="w-[100vw] h-[100vh] relative bg-black text-white">
+
+        <!-- BACKGROUND IMAGE -->
+        <img src="./images/amanities.webp" class="absolute inset-0 w-[100%] h-[100%] object-cover opacity-90" />
+
+        <!-- DARK OVERLAY -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- ================= NAVBAR ================= -->
+        <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
+        bg-black/60 backdrop-blur-xl rounded-full
+        px-[4vw] py-[1.2vh]
+        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+
+            <a href="./index.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
+            <a href="./about.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">About</a>
+            <a href="rooms.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Rooms</a>
+            <a href="./amenities.html"
+                class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">Amenities</a>
+            <a href="./contact.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Contact</a>
+
+        </nav>
+
+        <!-- HERO CONTENT -->
+        <div class="relative z-10 w-[100%] h-[100%]
+             flex items-center px-[6vw]">
+
+            <div class="max-w-[40vw] animate-slideUp">
+
+                <h2 class="text-[10vw] md:text-[4vw] leading-tight mb-[3vh]">
+                    Enjoy Your<br />Dream Vacation
+                </h2>
+
+                <p class="text-[3.5vw] md:text-[1.1vw] opacity-80 mb-[4vh]">
+                    The Seaside Hotel is the right choice for visitors who are
+                    searching for a combination of charm, peace, and comfort.
+                </p>
+
+                <a href="./rooms.html" class="inline-block rounded-md font-semibold bg-black px-[3vw] py-[1.5vh]
+                 text-[3vw] md:text-[1vw] tracking-wider
+                 hover:bg-white hover:text-black transition-all">
+                    CHOOSE ROOM
+                </a>
+            </div>
+        </div>
+
+        <!-- BOTTOM INFO BAR -->
+        <div class="absolute bottom-0 left-0 w-[100vw]
+             bg-black text-white
+             px-[6vw] py-[4vh]
+             grid grid-cols-1 md:grid-cols-3 gap-[4vh] z-20">
+
+            <!-- OPENING TIMES -->
+            <div class="flex items-center gap-[1.5vw]">
+                <span class="text-[6vw] md:text-[2vw]">⏰</span>
+                <div>
+                    <p class="text-[3vw] md:text-[1vw] font-semibold">OPENING TIMES</p>
+                    <p class="text-[3vw] md:text-[0.9vw] opacity-80">
+                        Monday - Friday: 09:00 - 18:00
+                    </p>
+                </div>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="flex items-center gap-[1.5vw]">
+                <span class="text-[6vw] md:text-[2vw]">🏠</span>
+                <div>
+                    <p class="text-[3vw] md:text-[1vw] font-semibold">OUR LOCATION</p>
+                    <p class="text-[3vw] md:text-[0.9vw] opacity-80">
+                        100 S Main St, Los Angeles, CA
+                    </p>
+                </div>
+            </div>
+
+            <!-- SUPPORT -->
+            <div class="flex items-center gap-[1.5vw]">
+                <span class="text-[6vw] md:text-[2vw]">🎧</span>
+                <div>
+                    <p class="text-[3vw] md:text-[1vw] font-semibold">CUSTOMER SUPPORT</p>
+                    <p class="text-[3vw] md:text-[0.9vw] opacity-80">
+                        +208 333 9296
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="w-[100vw] min-h-[100vh] relative">
+
+        <!-- BACKGROUND IMAGE -->
+        <img src="./images/rooms-bg.jpg" class="absolute inset-0 w-[100%] h-[100%] object-cover">
+
+        <!-- OVERLAY -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- CONTENT -->
+        <div class="relative z-10 px-[6vw] py-[10vh]">
+
+            <!-- TITLE -->
+            <h2 class="text-white text-center
+               text-[8vw] md:text-[3vw]
+               mb-[8vh]">
+                Our Rooms
+            </h2>
+
+            <!-- ROOM CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[4vw]">
+
+                <!-- CARD -->
+                <div class="room-card">
+                    <span class="badge">ONLY 2 ROOM LEFT</span>
+
+                    <img src="./images/room5.jpg" class="w-[100%] h-[30vh] object-cover">
+
+                    <div class="card-body">
+                        <p class="icons">👤 2 Guests &nbsp;&nbsp; 📐 30 ft</p>
+
+                        <h3>STANDARD ROOM</h3>
+
+                        <p class="desc">
+                            Most hotels and major hospitality companies have set
+                            industry standards to classify hotel types.
+                        </p>
+
+                        <button class="book-btn">
+                            BOOK NOW FOR $29 →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="room-card">
+                    <span class="badge">ONLY 1 ROOM LEFT</span>
+
+                    <img src="./images/room6.avif" class="w-[100%] h-[30vh] object-cover">
+
+                    <div class="card-body">
+                        <p class="icons">👤 2 Guests &nbsp;&nbsp; 📐 35 ft</p>
+
+                        <h3>DELUXE ROOM</h3>
+
+                        <p class="desc">
+                            Upscale full-service hotel facility offers luxury
+                            amenities and premium comfort.
+                        </p>
+
+                        <button class="book-btn">
+                            BOOK NOW FOR $39 →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="room-card">
+                    <span class="badge">ONLY 3 ROOM LEFT</span>
+
+                    <img src="./images/room7.jpg" class="w-[100%] h-[30vh] object-cover">
+
+                    <div class="card-body">
+                        <p class="icons">👤 2 Guests &nbsp;&nbsp; 📐 40 ft</p>
+
+                        <h3>PREMIER ROOM</h3>
+
+                        <p class="desc">
+                            Luxury room with city view, premium bedding and
+                            enhanced space.
+                        </p>
+
+                        <button class="book-btn">
+                            BOOK NOW FOR $49 →
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="w-[100vw] px-[6vw] py-[8vh]">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-[6vw] text-[3vw] md:text-[1vw]">
+
+            <!-- ABOUT -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">About</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">About us</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Our rooms</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Contact us</li>
+                </ul>
+            </div>
+
+            <!-- RESERVATION -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Reservation</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Request invoice</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Find a reservation</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Accommodation</li>
+                    <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Destination guide</li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Opening hours</h3>
+                <ul class="space-y-[1.5vh] opacity-70">
+                    <li class="hover:cursor-pointer">Mon – Fri: 12AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Saturday: 9AM – 11PM</li>
+                    <li class="hover:cursor-pointer">Sunday: 10AM – 10PM</li>
+                </ul>
+            </div>
+
+            <!-- ADDRESS -->
+            <div>
+                <h3 class="mb-[2vh] font-semibold">Address</h3>
+                <p class="opacity-70 cursor-pointer leading-relaxed">
+                    Line 7, 01/13 Mercury St,<br>
+                    Point Nova, South Wake,<br>
+                    Australia 3041
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mt-[6vh] cursor-pointer text-center text-[2.5vw] md:text-[0.9vw] opacity-60">
+            © 2025 Motelin Hotel. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- ANIMATION -->
+    <style>
+        .animate-slideUp {
+            animation: slideUp 1.2s ease forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(6vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+
+</body>
+
+</html>

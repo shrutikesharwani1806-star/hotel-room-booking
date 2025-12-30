@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Bookings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+    <style>
+        @keyframes imgReveal {
+            from {
+                opacity: 0;
+                transform: translateY(8vh) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .animate-imgReveal {
+            animation: imgReveal 1.2s ease forwards;
+        }
+
+        @keyframes textReveal {
+            from {
+                opacity: 0;
+                transform: translateY(6vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-textReveal {
+            animation: textReveal 1.3s ease forwards;
+        }
+
+        @keyframes titleReveal {
+            from {
+                opacity: 0;
+                transform: translateX(-8vw);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-titleReveal {
+            animation: titleReveal 1.4s ease forwards;
+        }
+
+        @keyframes linkReveal {
+            from {
+                opacity: 0;
+                transform: translateY(5vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-linkReveal {
+            animation: linkReveal 1.5s ease forwards;
+        }
+    </style>
+    <style>
+        @keyframes imgUp {
+            from {
+                opacity: 0;
+                transform: translateY(10vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-imgUp {
+            animation: imgUp 1.2s ease forwards;
+        }
+
+        .delay-200 {
+            animation-delay: .2s;
+        }
+
+        .delay-400 {
+            animation-delay: .4s;
+        }
+
+        @keyframes textFade {
+            from {
+                opacity: 0;
+                transform: translateX(-8vw);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-textFade {
+            animation: textFade 1.3s ease forwards;
+        }
+
+        @keyframes statsUp {
+            from {
+                opacity: 0;
+                transform: translateY(6vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-statsUp {
+            animation: statsUp 1.4s ease forwards;
+        }
+    </style>
+
+    <style>
+        @keyframes slowZoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.15);
+            }
+        }
+
+        .animate-slowZoom {
+            animation: slowZoom 25s linear infinite;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <body class="overflow-x-hidden">
+
+        <!-- ================= NAVBAR ================= -->
+        <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
+        bg-black/60 backdrop-blur-xl rounded-full
+        px-[4vw] py-[1.2vh]
+        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+
+            <a href="./index.html" class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
+            <a href="./about.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">About</a>
+            <a href="rooms.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Rooms</a>
+            <a href="./amenities.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Amenities</a>
+            <a href="./contact.html"
+                class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Contact</a>
+
+        </nav>
+
+        <!-- ================= HERO ================= -->
+        <section class="w-[100vw] h-[100vh] relative overflow-hidden">
+
+            <img src="./images/roombg.jpg" class="absolute w-[100vw] h-[100vh] object-cover scale-[1.1] animate-zoom">
+
+            <div class="absolute inset-0 bg-black/30"></div>
+
+            <div class="absolute bottom-[18vh] left-[50vw] -translate-x-[50%] text-white">
+                <h1 class="text-[10vw] md:text-[6vw] cursor-pointer animate-fadeUp">Amenities</h1>
+            </div>
+
+        </section>
+
+        <!-- ================= CONTENT ================= -->
+        <section class="w-[100vw] min-h-[80vh] px-[8vw] py-[10vh] bg-white">
+
+            <div class="flex flex-col md:flex-row gap-[8vw] items-center">
+
+                <!-- TEXT -->
+                <div class="w-[100%] md:w-[55vw] animate-slideLeft">
+
+                    <h2 class="text-[7vw] md:text-[4vw] leading-tight mb-[4vh]">
+                        Giving the<br>best just for you
+                    </h2>
+
+                    <div class="flex flex-wrap gap-[2vw] text-[2.5vw] md:text-[1vw]">
+
+                        <span class="cursor-pointer text-white bg-black px-[3vw] py-[1vh] rounded-full">Restaurant &
+                            Bar</span>
+                        <span class="cursor-pointer border px-[3vw] py-[1vh] rounded-full">Spa & Wellness</span>
+                        <span class="cursor-pointer border px-[3vw] py-[1vh] rounded-full">Yoga & Fitness</span>
+                        <span class="cursor-pointer border px-[3vw] py-[1vh] rounded-full">Summer Terrace</span>
+                        <span class="cursor-pointer border px-[3vw] py-[1vh] rounded-full">Kids Playroom</span>
+                        <span class="cursor-pointer border px-[3vw] py-[1vh] rounded-full">Swimming Pool</span>
+                        <span class="cursor-pointer border px-[3vw] py-[1vh] rounded-full">Events & Meetings</span>
+
+                    </div>
+                </div>
+
+                <!-- BUTTON -->
+                <div class="w-[100%] md:w-[30vw] flex justify-center animate-scaleIn">
+
+                    <button class="w-[30vw] h-[30vw] md:w-[12vw] md:h-[12vw]
+                     bg-black text-white rounded-full
+                     flex flex-col items-center justify-center
+                     hover:scale-105 transition">
+
+                        <span class="text-[6vw] md:text-[2vw]">▶</span>
+                        <span class="text-[2.5vw] md:text-[1vw] mt-[1vh]">Video Tour</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ================= LUXURY ROOM SECTION ================= -->
+        <section class="w-[100vw] min-h-[100vh] px-[8vw] py-[12vh] bg-white overflow-hidden">
+
+            <!-- TOP CONTENT -->
+            <div class="flex flex-col md:flex-row gap-[6vw] items-start">
+
+                <!-- IMAGE -->
+                <div class="w-[100%] md:w-[45vw] animate-imgReveal">
+                    <img src="./images/hotel bar.webp"
+                        class="w-[100%] cursor-pointer  h-[55vh] object-cover rounded-[2.5vw]" />
+                </div>
+
+                <!-- TEXT -->
+                <div class="w-[100%] md:w-[40vw] animate-textReveal">
+
+                    <!-- Item 1 -->
+                    <div class="mb-[6vh]">
+                        <h3 class="text-[4vw] md:text-[1.6vw] mb-[1.5vh]">
+                            Stylish decor and extensive beverage selection
+                        </h3>
+                        <p class="text-[3.2vw] md:text-[1vw] opacity-70 leading-relaxed">
+                            Immerse yourself in an atmosphere of sophistication with our
+                            elegant decor and a wide range of carefully curated beverages
+                            to enhance your stay.
+                        </p>
+                    </div>
+
+                    <hr class="mb-[6vh]">
+
+                    <!-- Item 2 -->
+                    <div>
+                        <h3 class="text-[4vw] md:text-[1.6vw] mb-[1.5vh]">
+                            Outdoor seating and live entertainment options
+                        </h3>
+                        <p class="text-[3.2vw] md:text-[1vw] opacity-70 leading-relaxed">
+                            Relax in our outdoor seating areas while enjoying live
+                            entertainment designed to create unforgettable moments.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- BOTTOM TEXT -->
+            <div class="mt-[12vh] flex flex-col md:flex-row justify-between items-end gap-[6vw]">
+
+                <!-- HEADING -->
+                <div class="w-[100%] cursor-pointer md:w-[45vw] animate-titleReveal">
+                    <h2 class="text-[9vw] md:text-[4.5vw] leading-tight">
+                        Your dream<br>
+                        luxurious hotel room
+                    </h2>
+                </div>
+
+                <!-- LINK -->
+                <div class="w-[100%] md:w-[30vw] animate-linkReveal">
+                    <p class="text-[3.2vw] md:text-[1vw] opacity-70 mb-[2vh]">
+                        Opulent furnishings, breathtaking views, lavish amenities,
+                        and personalized service await.
+                    </p>
+
+                    <a href="rooms.html"
+                        class="text-[3.5vw] cursor-pointer md:text-[1.1vw] underline underline-offset-[1vh] hover:opacity-60 transition">
+                        View all rooms
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= ROOMS SECTION ================= -->
+        <section class="w-[100vw] min-h-[100vh] px-[6vw] py-[10vh] bg-white">
+
+            <h2 class="text-[8vw] md:text-[4vw] mb-[6vh]">Our Rooms</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-[3vw]">
+
+                <!-- ROOM CARD -->
+                <div class="rounded-[2vw] border overflow-hidden">
+                    <img src="./images/room1.jpg" class="w-[100%] cursor-pointer h-[35vh] object-cover">
+                    <div class="p-[2vw]">
+                        <h3 class="text-[3.5vw] md:text-[1.2vw] mb-[1vh]">Premium Suite</h3>
+                        <p class="text-[3vw] md:text-[1vw] cursor-pointer opacity-70">$400 / night</p>
+
+                        <button onclick="bookRoom('Premium Suite', 400, 'assets/room1.jpg')" class="mt-[2vh] px-[3vw] py-[1vh] border rounded-full
+                          text-[3vw] md:text-[1vw] cursor-pointer
+                          hover:bg-black hover:text-white transition">
+                            Book now
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="rounded-[2vw] border overflow-hidden">
+                    <img src="./images/room2.jpg" class="w-[100%] cursor-pointer h-[35vh] object-cover">
+                    <div class="p-[2vw]">
+                        <h3 class="text-[3.5vw] md:text-[1.2vw] mb-[1vh]">Guest Room</h3>
+                        <p class="text-[3vw] md:text-[1vw] cursor-pointer opacity-70">$350 / night</p>
+
+                        <button onclick="bookRoom('Guest Room',350,'./images/room2.jpg')"
+                            class="mt-[2vh] cursor-pointer px-[3vw] py-[1vh] border rounded-full text-[3vw] md:text-[1vw] hover:bg-black hover:text-white transition">
+                            Book now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="rounded-[2vw] border overflow-hidden">
+                    <img src="./images/room3.webp" class="w-[100%] cursor-pointer h-[35vh] object-cover">
+                    <div class="p-[2vw]">
+                        <h3 class="text-[3.5vw] md:text-[1.2vw] mb-[1vh]">Economy Room</h3>
+                        <p class="text-[3vw] md:text-[1vw] cursor-pointer opacity-70">$200 / night</p>
+
+                        <button onclick="bookRoom('Economy Room', 200, './images/room3.webp')" class="mt-[2vh] px-[3vw] py-[1vh] border rounded-full
+                          text-[3vw] md:text-[1vw] cursor-pointer
+                          hover:bg-black hover:text-white transition">
+                            Book now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="rounded-[2vw] border overflow-hidden">
+                    <img src="./images/room4.jpg" class="w-[100%] cursor-pointer h-[35vh] object-cover">
+                    <div class="p-[2vw]">
+                        <h3 class="text-[3.5vw] md:text-[1.2vw] mb-[1vh]">Standard Deluxe</h3>
+                        <p class="text-[3vw] md:text-[1vw] cursor-pointer opacity-70">$450 / night</p>
+
+                        <button onclick="bookRoom('Standard Deluxe',450,'./images/room4.jpg')"
+                            class="mt-[2vh] px-[3vw] cursor-pointer py-[1vh] border rounded-full text-[3vw] md:text-[1vw] hover:bg-black hover:text-white transition">
+                            Book now
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- ================= EXPERIENCE SECTION ================= -->
+        <section class="w-[100vw] min-h-[100vh] bg-[#0f2a2d] px-[6vw] py-[10vh] overflow-hidden">
+
+            <!-- IMAGES -->
+            <div class="flex flex-col md:flex-row gap-[4vw] justify-center items-end">
+
+                <!-- IMAGE 1 -->
+                <div
+                    class="w-[80vw] md:w-[26vw] h-[45vh] cursor-pointer overflow-hidden rounded-t-[50vw] animate-imgUp">
+                    <img src="./images/hotel front view.jpg" class="w-full h-full object-cover">
+                </div>
+
+                <!-- IMAGE 2 -->
+                <div
+                    class="w-[80vw] md:w-[26vw] h-[50vh] cursor-pointer overflow-hidden rounded-t-[50vw] animate-imgUp delay-200">
+                    <img src="./images/hotel restro.jpg" class="w-full h-full object-cover">
+                </div>
+
+                <!-- IMAGE 3 -->
+                <div
+                    class="w-[80vw] md:w-[26vw] h-[45vh] cursor-pointer overflow-hidden rounded-t-[50vw] animate-imgUp delay-400">
+                    <img src="./images/hotel terece.jpg" class="w-full h-full object-cover">
+                </div>
+
+            </div>
+
+            <!-- TEXT + STATS -->
+            <div class="mt-[10vh] flex flex-col md:flex-row justify-between items-center gap-[8vw] text-white">
+
+                <!-- LEFT TEXT -->
+                <div class="w-[100%] md:w-[45vw] animate-textFade">
+                    <h2 class="text-[8vw] md:text-[4vw] leading-tight">
+                        With our experience<br>
+                        we will serve you
+                    </h2>
+                </div>
+
+                <!-- STATS -->
+                <div class="w-[100%] md:w-[45vw] grid grid-cols-3 gap-[4vw] text-center animate-statsUp">
+
+                    <div>
+                        <h3 class="text-[7vw] md:text-[3vw] font-semibold">800+</h3>
+                        <p class="text-[3vw] md:text-[1vw] opacity-70">Cities</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-[7vw] md:text-[3vw] font-semibold">3500+</h3>
+                        <p class="text-[3vw] md:text-[1vw] opacity-70">Exclusive Hotels</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-[7vw] md:text-[3vw] font-semibold">2M</h3>
+                        <p class="text-[3vw] md:text-[1vw] opacity-70">Satisfied Guests</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FINAL CTA + FOOTER ================= -->
+        <section class="w-[100vw] bg-white overflow-hidden">
+
+            <!-- CURVED IMAGE CTA -->
+            <div class="w-[100vw] h-[70vh] relative overflow-hidden rounded-b-[50vw]">
+
+                <img src="./images/hotel.jpg"
+                    class="absolute w-[100%] h-[100%] object-cover scale-110 animate-slowZoom">
+
+                <div class="absolute inset-0 bg-black/30"></div>
+
+                <div
+                    class="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-[6vw]">
+
+                    <p class="uppercase tracking-widest text-[3vw] md:text-[1vw] opacity-80 mb-[2vh]">
+                        Stories delivered straight
+                    </p>
+
+                    <h2 class="text-[7vw] md:text-[3.5vw] mb-[4vh]">
+                        Sign up for exclusive offers from us
+                    </h2>
+
+                    <div class="flex w-[90vw] md:w-[35vw] bg-white rounded-full overflow-hidden">
+                        <input type="email" placeholder="Your email address"
+                            class="w-[70%] px-[3vw] py-[2vh] text-[3vw] md:text-[1vw] outline-none text-black">
+
+                        <button class="w-[30%] bg-black cursor-pointer text-white text-[3vw] md:text-[1vw]
+          hover:bg-[#0f2a2d] transition">
+                            Subscribe
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="w-[100vw] px-[6vw] py-[8vh]">
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-[6vw] text-[3vw] md:text-[1vw]">
+
+                    <!-- ABOUT -->
+                    <div>
+                        <h3 class="mb-[2vh] font-semibold">About</h3>
+                        <ul class="space-y-[1.5vh] opacity-70">
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">About us</li>
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Our rooms</li>
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Contact us</li>
+                        </ul>
+                    </div>
+
+                    <!-- RESERVATION -->
+                    <div>
+                        <h3 class="mb-[2vh] font-semibold">Reservation</h3>
+                        <ul class="space-y-[1.5vh] opacity-70">
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Request invoice</li>
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Find a reservation
+                            </li>
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Accommodation</li>
+                            <li class="hover:opacity-100 cursor-pointer cursor-pointer transition">Destination guide
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- OPENING HOURS -->
+                    <div>
+                        <h3 class="mb-[2vh] font-semibold">Opening hours</h3>
+                        <ul class="space-y-[1.5vh] opacity-70">
+                            <li class="hover:cursor-pointer">Mon – Fri: 12AM – 11PM</li>
+                            <li class="hover:cursor-pointer">Saturday: 9AM – 11PM</li>
+                            <li class="hover:cursor-pointer">Sunday: 10AM – 10PM</li>
+                        </ul>
+                    </div>
+
+                    <!-- ADDRESS -->
+                    <div>
+                        <h3 class="mb-[2vh] font-semibold">Address</h3>
+                        <p class="opacity-70 cursor-pointer leading-relaxed">
+                            Line 7, 01/13 Mercury St,<br>
+                            Point Nova, South Wake,<br>
+                            Australia 3041
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="mt-[6vh] cursor-pointer text-center text-[2.5vw] md:text-[0.9vw] opacity-60">
+                    © 2025 Motelin Hotel. All rights reserved.
+                </div>
+
+            </footer>
+
+        </section>
+
+
+        <!-- ================= ANIMATIONS ================= -->
+        <style>
+            @keyframes zoom {
+                from {
+                    transform: scale(1);
+                }
+
+                to {
+                    transform: scale(1.15);
+                }
+            }
+
+            .animate-zoom {
+                animation: zoom 20s linear infinite;
+            }
+
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(6vh);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .animate-fadeUp {
+                animation: fadeUp 1.2s ease forwards;
+            }
+
+            @keyframes slideLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-8vw);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            .animate-slideLeft {
+                animation: slideLeft 1.2s ease forwards;
+            }
+
+            @keyframes scaleIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.85);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .animate-scaleIn {
+                animation: scaleIn 1s ease forwards;
+            }
+        </style>
+
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>

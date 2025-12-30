@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMENITIES || Bookings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="px-[8vw] py-[8vh]">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
+        bg-black/60 backdrop-blur-xl rounded-full
+        px-[4vw] py-[1.2vh]
+        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+
+        <a href="./index.html" class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
+        <a href="./about.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">About</a>
+        <a href="rooms.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Rooms</a>
+        <a href="./amenities.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Amenities</a>
+        <a href="./contact.html"
+            class="hover:bg-white hover:text-black px-[2vw] py-[0.8vh] rounded-full transition">Contact</a>
+
+    </nav>
+
+    <h1 class="text-[6vw] md:text-[4vw] mb-[4vh]">Book Your Room</h1>
+
+    <h2 id="roomName" class="text-[4vw] md:text-[3vw] mb-[2vh]"></h2>
+
+    <img id="roomImg" class="w-[100%] h-[40vh] object-cover rounded-[2vw] mb-[4vh]">
+
+    <p id="roomPriceText" class="text-[3.5vw] md:text-[1.2vw] opacity-70 mb-[3vh]">
+    </p>
+
+    <form onsubmit="confirmBooking(event)" class="flex flex-col gap-[2vh]">
+
+        <input type="text" placeholder="Your Name" required class="border px-[2vw] py-[1.5vh] text-[3vw] md:text-[1vw]">
+
+        <input type="number" id="days" placeholder="Number of days" oninput="calculateTotal()" required
+            class="border px-[2vw] py-[1.5vh] text-[3vw] md:text-[1vw]">
+
+        <p class="text-[4vw] md:text-[1.5vw]">
+            Total Amount: $<span id="total">0</span>
+        </p>
+
+        <select required class="border px-[2vw] py-[1.5vh] text-[3vw] md:text-[1vw]">
+            <option>Credit Card</option>
+            <option>UPI</option>
+            <option>Net Banking</option>
+        </select>
+
+        <button class="bg-black text-white font-black px-[4vw] py-[1.5vh]
+             rounded-full text-[3vw] md:text-[1vw]">
+            Confirm Booking
+        </button>
+
+    </form>
+
+    <script>
+        const roomName = localStorage.getItem("roomName");
+        const roomPrice = Number(localStorage.getItem("roomPrice"));
+        const roomImage = localStorage.getItem("roomImage");
+
+        document.getElementById("roomName").innerText = roomName;
+        document.getElementById("roomPriceText").innerText =
+            `$${roomPrice} / night`;
+        document.getElementById("roomImg").src = roomImage;
+
+        function calculateTotal() {
+            const days = document.getElementById("days").value;
+            document.getElementById("total").innerText =
+                days ? days * roomPrice : 0;
+        }
+
+        function confirmBooking(e) {
+            e.preventDefault();
+            window.location.href = "success.html";
+        }
+    </script>
+
+</body>
+
+
+</html>
