@@ -14,6 +14,14 @@
             font-family: 'Playfair Display', serif;
             scroll-behavior: smooth;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-serif-luxury {
+            font-family: 'Playfair Display', serif;
+        }
     </style>
 </head>
 
@@ -22,7 +30,7 @@
     <nav class="fixed top-[2vh] left-[50vw] -translate-x-[50%] z-50
         bg-black/60 backdrop-blur-xl rounded-full
         px-[4vw] py-[1.2vh]
-        flex gap-[2vw] text-white text-[2.2vw] md:text-[1vw]">
+        flex gap-[2vw] text-white text-[3vw] md:text-[1vw]">
 
         <a href="./index.html" class="bg-white text-black px-[2vw] py-[0.8vh] rounded-full transition">Home</a>
         <a href="./about.html"
@@ -36,7 +44,7 @@
 
     </nav>
 
-    <h1 class="text-[6vw] md:text-[4vw] mb-[4vh]">Book Your Room</h1>
+    <h1 class="text-[6vw] font-serif font-bold mt-[3vh] md:text-[4vw] mb-[4vh]">Book Your Room</h1>
 
     <h2 id="roomName" class="text-[4vw] md:text-[3vw] mb-[2vh]"></h2>
 
@@ -62,7 +70,7 @@
             <option>Net Banking</option>
         </select>
 
-        <button class="bg-black text-white font-black px-[4vw] py-[1.5vh]
+        <button class="bg-black hover:bg-gray-700 text-white px-[4vw] py-[1.5vh]
              rounded-full text-[3vw] md:text-[1vw]">
             Confirm Booking
         </button>

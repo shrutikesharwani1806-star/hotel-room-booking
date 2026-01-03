@@ -7,3 +7,17 @@ function bookRoom(roomName, pricePerNight, roomImage) {
 }
 
 
+const text = "Extra Services";
+let i = 0;
+const el = document.getElementById("rewriteText");
+
+function typeEffect() {
+  if (i < text.length) {
+    el.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 120);
+  }
+}
+
+el.innerHTML = "";
+window.addEventListener("load", typeEffect);
