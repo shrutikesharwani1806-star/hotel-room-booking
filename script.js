@@ -12,6 +12,7 @@ let i = 0;
 const el = document.getElementById("rewriteText");
 
 function typeEffect() {
+  if (!el) return;
   if (i < text.length) {
     el.innerHTML += text.charAt(i);
     i++;
@@ -19,5 +20,7 @@ function typeEffect() {
   }
 }
 
-el.innerHTML = "";
-window.addEventListener("load", typeEffect);
+if (el) {
+  el.innerHTML = "";
+  window.addEventListener("load", typeEffect);
+}

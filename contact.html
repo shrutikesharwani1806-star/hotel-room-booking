@@ -51,7 +51,7 @@
         <!-- CONTENT -->
         <div id="heroContent" class="relative text-center text-white px-[6vw]
         opacity-0 scale-90 translate-y-[6vh]
-        transition-all duration-[1500ms] ease-out">
+        transition-all duration-[250ms] ease-out">
 
             <h1 class="text-[9vw] font-serif-luxury font-bold md:text-[4vw] mb-[2vh]">
                 Contact Us
@@ -296,8 +296,9 @@
 
     <!-- ================= ANIMATION SCRIPT ================= -->
     <script>
-        window.addEventListener("load", () => {
-            document.getElementById("heroContent").classList.remove("opacity-0", "scale-90", "translate-y-[6vh]");
+        document.addEventListener("DOMContentLoaded", () => {
+            const hero = document.getElementById("heroContent");
+            if (hero) hero.classList.remove("opacity-0", "scale-90", "translate-y-[6vh]");
         });
     </script>
 
@@ -305,18 +306,19 @@
     <script>
         const infoSection = document.getElementById("contactInfo");
 
-        window.addEventListener("scroll", () => {
-            const sectionTop = infoSection.getBoundingClientRect().top;
-            const triggerPoint = window.innerHeight * 0.8;
+        if (infoSection) {
+            window.addEventListener("scroll", () => {
+                const sectionTop = infoSection.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight * 0.8;
 
-            if (sectionTop < triggerPoint) {
-                infoSection.classList.remove("opacity-0", "translate-y-[6vh]");
-            }
-        });
+                if (sectionTop < triggerPoint) {
+                    infoSection.classList.remove("opacity-0", "translate-y-[6vh]");
+                }
+            });
+        }
     </script>
 
-
-</body>
+    <script src="./script.js"></script>
 
 </body>
 
