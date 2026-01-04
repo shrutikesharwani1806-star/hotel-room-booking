@@ -11,6 +11,13 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
         rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa:wght@400;700&display=swap" rel="stylesheet">
+
 
     <style>
         body {
@@ -21,12 +28,20 @@
             font-family: 'Playfair Display', serif;
         }
 
+        @font-face {
+            font-family: 'Imperial';
+            src: url('./fonts/ImperialCalligraphy.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
         html {
             scroll-behavior: smooth;
         }
 
         .luxury-font {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Manrope', sans-serif;
         }
 
         @keyframes fadeUp {
@@ -263,7 +278,7 @@
         <section class="w-[100vw] h-[100vh] relative overflow-hidden">
 
             <!-- Background Image -->
-            <img src="./images/hotel front view.jpg" class="absolute w-[100vw] h-[100vh] object-cover animate-zoomSlow">
+            <img src="./images/hotel pool bg.jpg" class="absolute w-[100vw] h-[100vh] object-cover animate-zoomSlow">
 
             <!-- Dark Overlay -->
             <div class="absolute inset-0 bg-black/45"></div>
@@ -273,14 +288,20 @@
 
                 <div class="animate-fadeUp">
 
-                    <p class="text-[2.5vw] font-serif font-bold md:text-[1vw] tracking-[0.4vw] opacity-80 mb-[2vh]">
+                    <p class="text-[2.5vw] font-mea-culpa font-bold md:text-[1vw] leading-[1.1] opacity-80 mb-[2vh]">
                         ★★★★★ LUXURY HOTEL & RESORT
                     </p>
 
-                    <h1 class="text-[9vw] font-serif font-bold md:text-[4vw] leading-[1.1] mb-[4vh]">
+                    <h1 class="font-mea-culpa
+                      text-[9vw] md:text-[4vw]
+                      tracking-[0.2vw] md:tracking-[0.06vw]
+                      leading-[1.05]
+                      mb-[4vh]">
                         THE BEST LUXURY HOTEL<br>
                         IN CALIFORNIA
                     </h1>
+
+
 
                     <a href="./rooms.html" class="inline-block bg-[#c9a45c] text-black
                          px-[5vw] md:px-[2vw]
@@ -326,14 +347,15 @@
                     </p>
 
                     <h2 class="text-[8vw] md:text-[3.5vw] font-serif font-bold mb-[3vh] leading-tight">
-                        Bilury Gallery Hotel
+                        Hotel AMENITIES
                     </h2>
 
                     <p
                         class="text-[3.5vw] md:text-[1vw] font-light leading-[4.5vh] md:leading-[3vh] opacity-80 mb-[4vh]">
-                        Id vel omittur minimum, quo ad quidam perfecto. Mea justo dicta accusata no, te has
-                        aeque dolores repudiandae, his etiam pericula id. Ullam quaestio philosophia eos in,
-                        eu eam offendit laboramus intellegat.
+                        Welcome to a place where timeless elegance meets modern comfort. Our hotel offers an exceptional
+                        stay experience designed for travelers who value luxury, privacy, and personalized service. From
+                        beautifully crafted rooms to world-class amenities, every detail is thoughtfully curated to make
+                        your stay unforgettable.
                     </p>
 
                     <button class="px-[5vw] md:px-[2vw] py-[1.5vh]
@@ -361,7 +383,7 @@
                     Rooms & Suites
                 </h2>
                 <p class="text-[3vw] font-serif  md:text-[1vw] opacity-60">
-                    Ut amet omittam pri. Natum oportere abhorreant pri no.
+                    Book your rooms now.
                 </p>
             </div>
 
@@ -500,20 +522,22 @@
             </div>
         </section>
 
-        <section class="w-[100vw] min-h-[100vh] bg-[#f6f1ea] px-[6vw] py-[12vh] overflow-hidden">
+        <section class="w-[100vw] h-[100vh] md:h-[90vh] bg-[#f6f1ea] px-[8vw] py-[12vh] overflow-hidden">
 
             <div class="flex flex-col md:flex-row gap-[5vw]">
 
                 <!-- LEFT TEXT -->
                 <div class="w-[100%] md:w-[30vw]">
 
-                    <h2 id="rewriteText" class="heading-font font-serif font-bold text-[7vw] md:text-[3vw] mb-[3vh] text-[#1e1e1e]">
+                    <h2 id="rewriteText"
+                        class="heading-font font-serif font-bold text-[7vw] md:text-[3vw] mb-[3vh] text-[#1e1e1e]">
                         Extra Services
                     </h2>
 
                     <p class="text-[3.5vw] md:text-[1vw] text-[#555] leading-[3.5vh] mb-[4vh]">
-                        Lorem ipsum dolor sit amet, et option adipisci pro, qui semper
-                        voluptatum reformidans sit. Ut amet omittam pri.
+                        At our hotel, we go beyond comfort to deliver thoughtfully curated services designed to elevate
+                        your experience. From seamless travel arrangements to personalized lifestyle amenities, our
+                        extra services ensure your stay is effortless, refined, and truly memorable.
                     </p>
 
                     <button class="bg-[#c7a26a] text-white px-[4vw] md:px-[1.5vw] py-[1.2vh]
@@ -540,7 +564,7 @@
                                 Booking Tours
                             </h3>
                             <p class="text-[3vw] md:text-[0.9vw] text-[#666] mb-[2vh]">
-                                Qui iacunda referrentur cu. Vim modo utinam semper cu.
+                                Reserve premium bus, coach, or private transport tickets for smooth and stylish travel.
                             </p>
                             <span class="text-[#c7a26a] text-[3vw] md:text-[0.85vw] cursor-pointer">
                                 View tours →
@@ -561,7 +585,8 @@
                                 Airport Transfers
                             </h3>
                             <p class="text-[3vw] md:text-[0.9vw] text-[#666] mb-[2vh]">
-                                Vis et rationibus suscipit, vim id tota dolores.
+                                Arrive in comfort with our luxury vehicles, ensuring a seamless journey from airport to
+                                hotel.
                             </p>
                             <span class="text-[#c7a26a] text-[3vw] md:text-[0.85vw] cursor-pointer">
                                 Read more →
@@ -582,7 +607,8 @@
                                 Booking Tickets
                             </h3>
                             <p class="text-[3vw] md:text-[0.9vw] text-[#666] mb-[2vh]">
-                                E primis denique quo, dicere delenit principes nam.
+                                Gain priority access to concerts, cultural shows, exhibitions, and exclusive events
+                                during your stay.
                             </p>
                             <span class="text-[#c7a26a] text-[3vw] md:text-[0.85vw] cursor-pointer">
                                 Book Now →

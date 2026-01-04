@@ -11,28 +11,124 @@
 
     <style>
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            margin: 0;
+            overflow: hidden;
+            /* prevent scrollbars */
+            background: #111;
+            /* optional dark background to highlight sparkles */
+            position: relative;
+        }
+
+        @font-face {
+            font-family: 'Imperial';
+            src: url('./fonts/ImperialCalligraphy.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h1 {
+            font-family: 'Imperial', serif;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            /* on top of sparkles */
+            line-height: 1.5;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            /* behind content */
         }
     </style>
-</head>
 
-<body>
+<body class="w-[100vw] h-[100vh] flex items-center justify-center flex-col">
 
-    <body class="w-[100vw] h-[100vh] flex items-center justify-center">
+    <h1 class="text-[6vw] font-imperial md:text-[4vw] text-center">
+        😊<br>
+        Your booking is confirmed 🎉<br>
+        Thank you!
+    </h1>
 
-        <h1 class="text-[6vw] md:text-[4vw] text-center">
-            Your booking is confirmed 🎉<br>
-            Thank you!
-        </h1>
+    <canvas id="sparkles"></canvas>
 
-        <script>
-            setTimeout(() => {
-                window.location.href = "index.html"
-            }, 3000)
-        </script>
+    <script>
+        // Redirect after 3 seconds
+        setTimeout(() => {
+            window.location.href = "index.html"
+        }, 3000);
 
+        // Sparkles effect
+        const canvas = document.getElementById('sparkles');
+        const ctx = canvas.getContext('2d');
 
-    </body>
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const sparkles = [];
+        const sparkleCount = 100;
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        class Sparkle {
+            constructor() {
+                this.x = random(0, canvas.width);
+                this.y = random(-canvas.height, 0);
+                this.size = random(1, 4);
+                this.speed = random(1, 3);
+                this.opacity = random(0.3, 1);
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = random(-20, 0);
+                    this.x = random(0, canvas.width);
+                    this.size = random(1, 4);
+                    this.speed = random(1, 3);
+                    this.opacity = random(0.3, 1);
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Create sparkles
+        for (let i = 0; i < sparkleCount; i++) {
+            sparkles.push(new Sparkle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            sparkles.forEach(s => {
+                s.update();
+                s.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Make canvas responsive
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+</body>
+
 
 </html>
